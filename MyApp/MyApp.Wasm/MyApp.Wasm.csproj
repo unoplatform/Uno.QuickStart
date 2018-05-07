@@ -23,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.UI" Version="1.29.1-aobfwasm.2700" />
+		<PackageReference Include="Uno.UI" Version="1.29.1-aobfwasm.2834" />
 		<PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.17" />
 	</ItemGroup>
 
