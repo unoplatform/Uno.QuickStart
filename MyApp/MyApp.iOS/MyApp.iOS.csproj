@@ -11,7 +11,8 @@
     <AssemblyName>MyApp.iOS.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-  </PropertyGroup>
+    <ResourcesDirectory>..\MyApp.Shared\Strings</ResourcesDirectory>
+	</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
