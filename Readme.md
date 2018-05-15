@@ -1,3 +1,4 @@
+
 # Uno Quick Start
 This repository is a basic sample for an [Uno](http://platform.uno/) application which cross-targets UWP, iOS, Android and WebAssembly.
 
@@ -13,8 +14,13 @@ You can also [try out the experimental WASM build live](http://platform.uno/Play
 	* A working Mac with Visual Studio for Mac, XCode 8.2 or later installed
 	* The google Android x86 emulators
 * On Windows
-	- The Linux Subsystem to run the native Python tools
-	- Or the Python tools for windows
+	- Running WASM Project using Python
+		- The Linux Subsystem to run the native Python tools
+		- Or the Python tools for windows
+	- Running WASM Project using Node
+		- Node tools (https://nodejs.org/en/)
+		- http-server package (https://www.npmjs.com/package/http-server)
+			- `npm install npm install http-server -g`
 
 ## Create an application from the solution template
 
@@ -25,9 +31,11 @@ To easily create an multi-platform application:
 * To debug the iOS head, select the `Debug|iPhoneSimulator` configuration
 * To debug the Android head, select the `Debug|AnyCPU` configuration
 * To debug the UWP head, select the `Debug|x86` configuration
-* To run the WASM head, locate the `dist` folder in the debug output, and run the server.py, 
-which will open an HTTP server on http://localhost:8000. On Windows, use Python tools or the 
-Linux Subsystem.
+* To run the WASM head, locate the `dist` folder in the debug output.
+	- Python: run the server.py. On Windows, use Python tools or the Linux Subsystem.
+	- Node: run `http-server ./ -p 8000`
+ 
+ An HTTP server on http://localhost:8000 will open.
 
 Note that the WASM head cannot be debugged at this point, the `mono-wasm` SDK does
 not provide support for this yet. For more details on the wasm support see 
