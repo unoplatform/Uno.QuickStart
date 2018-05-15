@@ -35,7 +35,7 @@ To easily create an multi-platform application:
 	- Python: run the server.py. On Windows, use Python tools or the Linux Subsystem.
 	- Node: run `http-server ./ -p 8000`
  
- A HTTP server on http://localhost:8000 will open.
+ An HTTP server on http://localhost:8000 will open.
 
 Note that the WASM head cannot be debugged at this point, the `mono-wasm` SDK does
 not provide support for this yet. For more details on the wasm support see 
