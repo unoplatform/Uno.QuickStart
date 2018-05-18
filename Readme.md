@@ -26,7 +26,9 @@ You can also [try out the experimental WASM build live](http://platform.uno/Play
 
 To easily create an multi-platform application:
 * Install the [Uno Solution Template Visual Studio Extension](https://github.com/nventive/Uno/releases) (UnoSolutionTemplate.vsix)
-* Create a new C# solution using the **Uno App Solution** template. 
+* Create a new C# solution using the **Uno App Solution** template, from Visual Studio's **Start Page** :
+
+![](docs/assets/vsix-new-project.png)
 * Update to the latest nuget package named `Uno.UI`, make sure to check the `pre-release` box.
 * To debug the iOS head, select the `Debug|iPhoneSimulator` configuration
 * To debug the Android head, select the `Debug|AnyCPU` configuration
