@@ -1,4 +1,5 @@
 ﻿using System;
+using Windows.UI.Xaml;
 
 namespace MyApp.Wasm
 {
@@ -8,7 +9,7 @@ namespace MyApp.Wasm
 
 		static void Main(string[] args)
 		{
-			_app = new App();
+			Application.Start(_ => _app = new App());
 		}
 	}
 }

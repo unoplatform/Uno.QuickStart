@@ -1,4 +1,3 @@
-
 # Uno Quick Start
 This repository is a basic sample for an [Uno](http://platform.uno/) application which cross-targets UWP, iOS, Android and WebAssembly.
 
@@ -25,8 +24,8 @@ You can also [try out the experimental WASM build live](http://platform.uno/Play
 ## Create an application from the solution template
 
 To easily create an multi-platform application:
-* Install the [Uno Solution Template Visual Studio Extension](https://github.com/nventive/Uno/releases) (UnoSolutionTemplate.vsix)
-* Create a new C# solution using the **Uno App Solution** template, from Visual Studio's **Start Page** :
+* Install the [Uno Solution Template Visual Studio Extension](https://marketplace.visualstudio.com/items?itemName=nventivecorp.uno-platform-addin)
+* Create a new C# solution using the **Cross-Platform Library (Uno Platform)** template, from Visual Studio's **Start Page** :
 
 ![](docs/assets/vsix-new-project.png)
 * Update to the latest nuget package named `Uno.UI`, make sure to check the `pre-release` box.
@@ -34,10 +33,15 @@ To easily create an multi-platform application:
 * To debug the Android head, select the `Debug|AnyCPU` configuration
 * To debug the UWP head, select the `Debug|x86` configuration
 * To run the WASM head, locate the `dist` folder in the debug output.
-	- Python: run the server.py. On Windows, use Python tools or the Linux Subsystem.
+	- Python: run `server.py`. 
+		- On Windows, use either:
+			- Python tools 
+			- The Linux Subsystem: 
+				- On the bash prompt, run ``cd `wslpath "C:\YourWindowsPath"` ``
+				- Run either `python3 server.py` or `python server.py`.
 	- Node: run `http-server ./ -p 8000`
  
- An HTTP server on http://localhost:8000 will open.
+An HTTP server on http://localhost:8000 will open.
 
 Note that the WASM head cannot be debugged at this point, the `mono-wasm` SDK does
 not provide support for this yet. For more details on the wasm support see 

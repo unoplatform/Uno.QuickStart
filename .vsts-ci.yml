@@ -1,0 +1,40 @@
+phases:
+- phase: Packages
+  variables:
+    NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
+    NUGET_HTTP_CACHE_PATH: $(Agent.WorkFolder)\.nuget-http-cache
+
+  steps:
+  - checkout: self
+    clean: true
+    lfs: true
+
+  - task: GitVersion@3
+    inputs:
+      updateAssemblyInfo: false
+
+  - task: NuGetToolInstaller@0
+    inputs:
+      versionSpec: 4.3.0
+      checkLatest: false
+
+  - task: NuGetCommand@2
+    inputs:
+      command: restore
+      solution: src/MyApp.sln
+      selectOrConfig: select
+      includeNuGetOrg: true
+      verbosityRestore: Normal
+
+  - task: MSBuild@1
+    inputs:
+      solution: src/MyApp.sln
+      msbuildLocationMethod: version
+      msbuildVersion: latest
+      msbuildArchitecture: x86
+      msbuildArguments: /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary "/p:PackageVersion=$(GITVERSION.FullSemVer)" "/p:InformationalVersion=$(GITVERSION.InformationalVersion)"
+      clean: false
+      maximumCpuCount: true
+      restoreNugetPackages: false
+      logProjectEvents: false
+      createLogFile: false

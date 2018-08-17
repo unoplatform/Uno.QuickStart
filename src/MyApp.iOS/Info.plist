@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>UnoQuickStart.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.MyApp.iOS</string>
+	<string>com.companyname.MyApp</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
