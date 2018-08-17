@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{628832A8-0BDD-4786-BC61-1619F9D946E6}</ProjectGuid>
+    <ProjectGuid>{F24224FE-C93E-4593-A4E0-5AE49600DB8E}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MyApp.iOS.iOS</RootNamespace>
+    <RootNamespace>MyApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>MyApp.iOS.iOS</AssemblyName>
+    <AssemblyName>MyApp.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ResourcesDirectory>..\MyApp.Shared\Strings</ResourcesDirectory>
-	</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Uno.UI">
-      <Version>1.29.1-aobfwasm.2834</Version>
+      <Version>1.31.0-dev.235</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\MyApp.Shared\MyApp.Shared.projitems" Label="Shared" Condition="Exists('..\MyApp.Shared\MyApp.Shared.projitems')" />
