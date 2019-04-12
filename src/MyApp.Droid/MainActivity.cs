@@ -6,13 +6,13 @@ using Android.Views;
 
 namespace MyApp.Droid
 {
-	[Activity(
-			MainLauncher = true,
-			ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize,
-			WindowSoftInputMode = SoftInput.AdjustPan | SoftInput.StateHidden
-		)]
-	public class MainActivity : Windows.UI.Xaml.ApplicationActivity
-	{
-	}
+    [Activity(
+            MainLauncher = true,
+            ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize,
+            WindowSoftInputMode = SoftInput.AdjustPan | SoftInput.StateHidden
+        )]
+    public class MainActivity : Windows.UI.Xaml.ApplicationActivity
+    {
+    }
 }
 
