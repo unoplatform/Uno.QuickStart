@@ -19,7 +19,7 @@ You can also [try out the experimental WASM build live](http://platform.uno/Play
 	- Running WASM Project using Node
 		- Node tools (https://nodejs.org/en/)
 		- http-server package (https://www.npmjs.com/package/http-server)
-			- `npm install npm install http-server -g`
+			- `npm install http-server -g`
 
 ## Create an application from the solution template
 
