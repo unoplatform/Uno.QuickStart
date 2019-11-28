@@ -1,7 +1,9 @@
 #!/bin/bash
 
-pushd /workspace/uno/src/SamplesApp/SamplesApp.Wasm
+CLI_HOST_PATH=${dirname `ls -rt /workspace/.nuget/uno.wasm.bootstrap.cli/*/dotnet-unowasm.dll | head -1`}
 
-dotnet unowasm serve --urls=http://*:8000 --pathbase /workspace/uno/src/SamplesApp/SamplesApp.Wasm/bin/Debug/netstandard2.0/dist
+pushd $(CLI_HOST_PATH)
+
+dotnet unowasm serve --urls=http://*:8000 --pathbase /workspace/uno/src/MyApp.Wasm/bin/Debug/netstandard2.0/dist
 
 popd
