@@ -8,9 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<StackPanel Margin="50">
-			<Slider x:Name="slider" />
-			<TextBlock Text="{Binding Value, ElementName=slide}" FontSize="30"/>
-		</StackPanel>
+		<TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
     </Grid>
 </Page>

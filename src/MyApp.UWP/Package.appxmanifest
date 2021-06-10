@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="38c7ed64-5097-4c10-ac5e-7174ebd427d5"
-    Publisher="CN=com.example"
+    Name="161b0c07-ea6a-4fc4-937b-a269e3706370"
+    Publisher="CN=jerome.laban"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="800c9c9a-7707-48ca-b372-53913bdd7cac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="04e53f92-1713-4fa8-a2e1-8a8b787d58dc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MyApp</DisplayName>
@@ -29,7 +29,7 @@
 
   <Applications>
     <Application Id="App"
-      Executable="MyApp.exe"
+      Executable="$targetnametoken$.exe"
       EntryPoint="MyApp.App">
       <uap:VisualElements
         DisplayName="MyApp"
