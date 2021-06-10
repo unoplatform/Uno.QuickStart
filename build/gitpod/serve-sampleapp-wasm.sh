@@ -1,7 +1,10 @@
 #!/bin/bash
-pushd /workspace/Uno.QuickStart/src/MyApp.Wasm/bin/Debug/netstandard2.0/dist
+pushd /workspace/Uno.QuickStart/src/MyApp.Wasm/bin/Debug/net5.0/dist
 
-python3 server.py
+dotnet tool install dotnet-serve -g
+export PATH="$PATH:/home/gitpod/.dotnet/tools"
+
+dotnet serve -p 8000
 
 popd
 

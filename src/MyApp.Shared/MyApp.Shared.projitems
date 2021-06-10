@@ -1,41 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
-    <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>6279c845-92f8-4333-ab99-3d213163593c</SharedGUID>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>MyApp.Shared</Import_RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+	<PropertyGroup>
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+		<HasSharedItems>true</HasSharedItems>
+		<SharedGUID>6279c845-92f8-4333-ab99-3d213163593c</SharedGUID>
+	</PropertyGroup>
+	<PropertyGroup Label="Configuration">
+		<Import_RootNamespace>MyApp</Import_RootNamespace>
+	</PropertyGroup>
 	<ItemGroup>
-		<Content Include="$(MSBuildThisFileDirectory)Assets\lockscreenlogo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\splashscreen.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\square150x150logo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\square44x44logo.scale-200.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\square44x44logo.targetsize-24_altform-unplated.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\storelogo.png" />
-		<Content Include="$(MSBuildThisFileDirectory)Assets\wide310x150logo.scale-200.png" />
+		<ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</ApplicationDefinition>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+			<DependentUpon>App.xaml</DependentUpon>
+		</Compile>
+		<Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+			<DependentUpon>MainPage.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+			<SubType>Designer</SubType>
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
 	</ItemGroup>
 	<ItemGroup>
 		<PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
