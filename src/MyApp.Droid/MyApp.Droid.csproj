@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d91e578b-95e7-4727-940e-ce60b8e69ebf</ProjectGuid>
+    <ProjectGuid>{D91E578B-95E7-4727-940E-CE60B8E69EBF}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -60,8 +60,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.UI" Version="3.8.13" />
-    <PackageReference Include="Uno.UI.RemoteControl" Version="3.8.13" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI" Version="3.9.7" />
+    <PackageReference Include="Uno.UI.RemoteControl" Version="3.9.7" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="Uno.UniversalImageLoader" Version="1.9.35" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
