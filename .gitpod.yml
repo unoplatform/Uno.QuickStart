@@ -15,7 +15,6 @@ tasks:
     init: |
       mkdir -p $DOTNET_ROOT && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel $DOTNET_VERSION --install-dir $DOTNET_ROOT 
       dotnet dev-certs https 
-      dotnet restore
 
   # This task is run during pre-build and it's log and built results are
   # restored as part of the workspace initialization.
