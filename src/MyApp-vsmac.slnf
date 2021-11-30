@@ -1,0 +1,21 @@
+{
+  "solution": {
+    "path": "MyApp.sln",
+    "projects": [
+		"MyApp.Shared\\MyApp.Shared.shproj",
+
+		"MyApp.Droid\\MyApp.Droid.csproj",
+
+		"MyApp.iOS\\MyApp.iOS.csproj",
+
+
+		"MyApp.Wasm\\MyApp.Wasm.csproj",
+
+		"MyApp.macOS\\MyApp.macOS.csproj",
+
+		"MyApp.Skia.Gtk\\MyApp.Skia.Gtk.csproj",
+
+		"MyApp.Skia.Linux.FrameBuffer\\MyApp.Skia.Linux.FrameBuffer.csproj",
+    ]
+  }
+}

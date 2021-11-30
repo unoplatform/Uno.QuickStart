@@ -1,5 +1,5 @@
-﻿using GLib;
 using System;
+using GLib;
 using Uno.UI.Runtime.Skia;
 
 namespace MyApp.Skia.Gtk

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="161b0c07-ea6a-4fc4-937b-a269e3706370"
-    Publisher="CN=jerome.laban"
+    Name="C4E2712A-A40B-4B60-85F8-61761BACCCA5"
+    Publisher="O=MyCompany"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="04e53f92-1713-4fa8-a2e1-8a8b787d58dc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="393C9809-6F07-4008-8619-C6B290744B60" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MyApp</DisplayName>
