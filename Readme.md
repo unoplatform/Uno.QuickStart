@@ -6,7 +6,7 @@ You can clone this repository and open it in:
 [Xaml Hot Reload](https://docs.microsoft.com/en-us/visualstudio/xaml-tools/xaml-hot-reload?view=vs-2022), C# Hot Reload, then run your app on iOS, Android, Windows or [WSL](https://platform.uno/docs/articles/get-started-with-linux.html). 
 - [Codespaces](https://github.com/features/codespaces) (WebAssembly) or [Gitpod](https://gitpod.io) (WebAssembly / Linux+Skia) to get a fully configured environment ready to use
 
-You can [try out the WebAssembly Playground in your browser](http://platform.uno/Playground/index.html).
+You can [try out the WebAssembly Playground in your browser](https://playground.platform.uno/).
 
 You can try developing this application right in your browser:
 
