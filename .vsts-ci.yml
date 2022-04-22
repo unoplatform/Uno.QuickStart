@@ -21,7 +21,7 @@ jobs:
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary "/p:PackageVersion=$(GITVERSION.FullSemVer)" "/p:InformationalVersion=$(GITVERSION.InformationalVersion)" /p:AppxPackageSigningEnabled=false
+      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary /p:AotAssemblies=false /p:AppxPackageSigningEnabled=false
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false
