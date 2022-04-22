@@ -2,7 +2,7 @@ jobs:
 - job: Packages
 
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-2022'
 
   variables:
     NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
