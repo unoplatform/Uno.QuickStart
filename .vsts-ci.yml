@@ -15,10 +15,6 @@ jobs:
   - checkout: self
     clean: true
 
-  - task: GitVersion@5
-    inputs:
-      updateAssemblyInfo: false
-
   - task: MSBuild@1
     inputs:
       solution: src/MyApp.sln
