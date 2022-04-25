@@ -2,7 +2,7 @@ jobs:
 - job: Packages
 
   pool:
-    vmImage: 'windows-2019'
+    vmImage: 'windows-2022'
 
   variables:
     NUGET_PACKAGES: $(Agent.WorkFolder)\.nuget
@@ -15,17 +15,13 @@ jobs:
   - checkout: self
     clean: true
 
-  - task: GitVersion@5
-    inputs:
-      updateAssemblyInfo: false
-
   - task: MSBuild@1
     inputs:
       solution: src/MyApp.sln
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary "/p:PackageVersion=$(GITVERSION.FullSemVer)" "/p:InformationalVersion=$(GITVERSION.InformationalVersion)" /p:AppxPackageSigningEnabled=false
+      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary /p:AotAssemblies=false /p:AppxPackageSigningEnabled=false
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false
