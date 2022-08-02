@@ -21,8 +21,6 @@ See [the VS Code Getting started](https://platform.uno/docs/articles/get-started
 ## Develop using Codespaces
 ### WebAssembly
 1. Install the suggested [Uno Platform extension](https://marketplace.visualstudio.com/items?itemName=unoplatform.vscode)
-1. Open the command palette (Ctrl+Shift+P) and execute the `Run uno-check` command to install the appropriate .NET SDK
-1. Open the command palette (Ctrl+Shift+P) and run the `Install the dotnet new templates` command to install the dotnet new templates
 1. Once the C# environment is setup, with the commmand palette use the command "Omnisharp: Select project" (or click on the project name in the status bar)
 1. Select the `MyApp.Wasm` project
 1. Using a terminal, navigate to the `MyApp.Wasm` folder
@@ -39,8 +37,6 @@ See [the VS Code Getting started](https://platform.uno/docs/articles/get-started
 ## Develop using Gitpod
 ### How to develop for WebAssembly
 1. Install the suggested [Uno Platform extension](https://open-vsx.org/extension/unoplatform/vscode)
-1. Open the command palette (Ctrl+Shift+P) and execute the `Run uno-check` command to install the appropriate .NET SDK
-1. Open the command palette (Ctrl+Shift+P) and run the `Install the dotnet new templates` command to install the dotnet new templates
 1. Once the C# environment is setup, with the commmand palette use the command "Omnisharp: Select project" (or click on the project name in the status bar)
 1. Select the `MyApp.Wasm` project
 1. Using a terminal, navigate to the `MyApp.Wasm` folder
