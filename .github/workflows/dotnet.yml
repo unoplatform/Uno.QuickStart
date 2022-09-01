@@ -2,14 +2,15 @@ name: Build WebAssembly
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: 'unoplatform/wasm-build:3.0'
 
     steps:
     - uses: actions/checkout@v3
@@ -22,4 +23,4 @@ jobs:
     - name: Build
       run: |
         cd src/MyApp.Wasm
-        dotnet build
+        dotnet build -c Release
