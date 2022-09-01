@@ -2,14 +2,15 @@ name: Build WebAssembly
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: 'unoplatform/wasm-build:3.0'
 
     steps:
     - uses: actions/checkout@v3
@@ -21,5 +22,12 @@ jobs:
         
     - name: Build
       run: |
+        mkdir -p $GITHUB_WORKSPACE/artifacts
+        mkdir -p $GITHUB_WORKSPACE/artifacts/wasm
         cd src/MyApp.Wasm
-        dotnet build
+        dotnet publish -c Release /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: drop
+        path: artifacts
