@@ -21,9 +21,16 @@ jobs:
       msbuildLocationMethod: version
       msbuildVersion: latest
       msbuildArchitecture: x86
-      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary /p:AotAssemblies=false /p:AppxPackageSigningEnabled=false
+      msbuildArguments: /r /p:Configuration=Release "/p:Platform=Any CPU" /detailedsummary /p:AotAssemblies=false /p:AppxPackageSigningEnabled=false /bl:$(build.artifactstagingdirectory)/build.binlog
       clean: false
       maximumCpuCount: true
       restoreNugetPackages: false
       logProjectEvents: false
       createLogFile: false
+
+
+  - task: PublishBuildArtifacts@1
+    retryCountOnTaskFailure: 3
+    condition: always()
+    inputs:
+      ArtifactName: drop
