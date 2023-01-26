@@ -18,14 +18,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 6.0.400
+        dotnet-version: 7.0.102
         
+    - name: Install .NET Workloads
+      shell: pwsh
+      run: |
+        & dotnet tool install --global --version 1.11 uno.check
+        & ~/.dotnet/tools/uno-check --ci --fix --non-interactive --verbose
+
     - name: Build
       run: |
         mkdir -p $GITHUB_WORKSPACE/artifacts
         mkdir -p $GITHUB_WORKSPACE/artifacts/wasm
         cd src/MyApp.Wasm
-        dotnet publish -c Release /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
+        dotnet publish -c Release -f net7.0 /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
 
     - uses: actions/upload-artifact@v2
       with:

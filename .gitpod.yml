@@ -11,9 +11,9 @@ ports:
 
 tasks:
   # Mitigation for https://github.com/gitpod-io/gitpod/issues/6460 
-  - name: Postinstall .NET 6.0 and dev certificates
+  - name: Postinstall .NET and dev certificates
     init: |
-      mkdir -p $DOTNET_ROOT && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel $DOTNET_VERSION --install-dir $DOTNET_ROOT 
+      mkdir -p $DOTNET_ROOT && curl -fsSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin -v $DOTNET_VERSION --install-dir $DOTNET_ROOT 
       dotnet dev-certs https 
 
   # This task is run during pre-build and it's log and built results are
