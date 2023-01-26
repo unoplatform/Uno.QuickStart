@@ -24,7 +24,7 @@ jobs:
       shell: pwsh
       run: |
         & dotnet tool install --global --version 1.11 uno.check
-        & uno-check --ci --fix --non-interactive --verbose
+        & ~/.dotnet/tools/uno-check --ci --fix --non-interactive --verbose
 
     - name: Build
       run: |
