@@ -31,7 +31,7 @@ jobs:
         mkdir -p $GITHUB_WORKSPACE/artifacts
         mkdir -p $GITHUB_WORKSPACE/artifacts/wasm
         cd src/MyApp.Wasm
-        dotnet publish -c Release /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
+        dotnet publish -c Release -f net7.0 /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
 
     - uses: actions/upload-artifact@v2
       with:
