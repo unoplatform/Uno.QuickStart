@@ -1,12 +1,12 @@
-﻿using GLib;
 using System;
-using Uno.UI.Runtime.Skia;
+using GLib;
+using Uno.UI.Runtime.Skia.Gtk;
 
 namespace MyApp.Skia.Gtk
 {
-    public sealed class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             ExceptionManager.UnhandledException += delegate (UnhandledExceptionArgs expArgs)
             {
@@ -14,7 +14,7 @@ namespace MyApp.Skia.Gtk
                 expArgs.ExitApplication = true;
             };
 
-            var host = new GtkHost(() => new App());
+            var host = new GtkHost(() => new AppHead());
 
             host.Run();
         }

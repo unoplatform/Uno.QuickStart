@@ -2,18 +2,26 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <NoWarn>NU1701</NoWarn>
-		
-	</PropertyGroup>
+    <NoWarn>$(NoWarn);NU1504;NU1505;NU1701</NoWarn>
+    <!-- Disabled due to issue with Central Package Management with implicit using -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <WasmPWAManifestFile>manifest.webmanifest</WasmPWAManifestFile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <!--
+      Supports Deep Linking Routes
+      https://aka.platform.uno/wasm-deeplink
+    -->
+    <WasmShellWebAppBasePath>/</WasmShellWebAppBasePath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
     <DefineConstants>$(DefineConstants);TRACE;DEBUG</DefineConstants>
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <!--
-		IL Linking is disabled in Debug configuration.
-		When building in Release, see https://aka.platform.uno/wasm-il-linker
-		-->
+      IL Linking is disabled in Debug configuration.
+      When building in Release, see https://platform.uno/docs/articles/features/using-il-linker-WebAssembly.html
+    -->
     <WasmShellILLinkerEnabled>false</WasmShellILLinkerEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
@@ -25,9 +33,8 @@
     <!-- <WasmShellGenerateAOTProfile>true</WasmShellGenerateAOTProfile> -->
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Assets\SplashScreen.png" />
-		
-	</ItemGroup>
+    <Content Include="manifest.webmanifest" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
     <EmbeddedResource Include="WasmScripts\AppManifest.js" />
@@ -37,25 +44,25 @@
   </ItemGroup>
   <ItemGroup>
     <!--
-		This item group is required by the project template because of the
-		new SDK-Style project, otherwise some files are not added automatically.
+    This item group is required by the project template because of the
+    new SDK-Style project, otherwise some files are not added automatically.
 
-		You can safely remove this ItemGroup completely.
-		-->
+    You can safely remove this ItemGroup completely.
+    -->
     <None Include="Program.cs" />
     <None Include="LinkerConfig.xml" />
     <None Include="wwwroot\web.config" />
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.0" />
-    <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.4.0" />
-    <PackageReference Include="Uno.WinUI.WebAssembly" Version="4.10.13" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.10.13" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.10.13" />
-    <PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.25" />
-    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="7.0.25" />
-    <PackageReference Include="Uno.WinUI.Lottie" Version="4.10.13" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" />
+    <PackageReference Include="Uno.Wasm.Bootstrap" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" />
+    <PackageReference Include="Uno.WinUI.WebAssembly" />
+    <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
+    <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyApp\MyApp.csproj" />
