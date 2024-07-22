@@ -18,20 +18,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 7.0.102
+        dotnet-version: 8.0.300
         
     - name: Install .NET Workloads
       shell: pwsh
       run: |
-        & dotnet tool install --global --version 1.16.1 uno.check
-        & ~/.dotnet/tools/uno-check --ci --fix --non-interactive --verbose
+        & dotnet tool install --global --version 1.25.1 uno.check
+        & ~/.dotnet/tools/uno-check --ci --fix --skip androidsdk --skip openjdk --non-interactive --verbose
 
     - name: Build
       run: |
         mkdir -p $GITHUB_WORKSPACE/artifacts
         mkdir -p $GITHUB_WORKSPACE/artifacts/wasm
-        cd src/MyApp.Wasm
-        dotnet publish -c Release -f net7.0 -p:OverrideTargetFrameworks=net7.0 /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
+        cd src/MyApp
+        dotnet publish -c Release -f net8.0-browserwasm -p:OverrideTargetFrameworks=net8.0 /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
 
     - uses: actions/upload-artifact@v2
       with:
