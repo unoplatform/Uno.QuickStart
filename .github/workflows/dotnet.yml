@@ -30,7 +30,7 @@ jobs:
       run: |
         mkdir -p $GITHUB_WORKSPACE/artifacts
         mkdir -p $GITHUB_WORKSPACE/artifacts/wasm
-        cd src/MyApp.Wasm
+        cd src/MyApp
         dotnet publish -c Release -f net8.0-browserwasm -p:OverrideTargetFrameworks=net8.0 /bl:/artifacts/mbuild.binlog -o $GITHUB_WORKSPACE/artifacts/wasm
 
     - uses: actions/upload-artifact@v2
