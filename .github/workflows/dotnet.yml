@@ -24,7 +24,7 @@ jobs:
       shell: pwsh
       run: |
         & dotnet tool install --global --version 1.25.1 uno.check
-        & ~/.dotnet/tools/uno-check --ci --fix --non-interactive --verbose
+        & ~/.dotnet/tools/uno-check --ci --fix --skip androidsdk --skip openjdk --non-interactive --verbose
 
     - name: Build
       run: |
